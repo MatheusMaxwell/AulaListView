@@ -7,7 +7,6 @@
     tools:context=".DetalheActivity"
     android:background="@color/azulClaro">
 
-
     <Button
         android:id="@+id/btnVoltar"
         android:text="@string/voltar"
