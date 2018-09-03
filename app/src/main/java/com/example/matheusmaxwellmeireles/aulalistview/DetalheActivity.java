@@ -34,6 +34,7 @@ public class DetalheActivity extends Activity implements View.OnClickListener{
         btnVoltar = findViewById(R.id.btnVoltar);
         btnVoltar.setOnClickListener(this);
 
+
         int linha = getIntent().getIntExtra("linha", 0);
 
         Carro carro = new Carro();
