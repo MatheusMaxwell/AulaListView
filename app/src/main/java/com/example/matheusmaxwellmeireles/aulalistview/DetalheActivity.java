@@ -2,19 +2,23 @@ package com.example.matheusmaxwellmeireles.aulalistview;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DetalheActivity extends Activity {
+public class DetalheActivity extends Activity implements View.OnClickListener{
 
     TextView txtFab;
     TextView txtMod;
     ImageView image;
+    Button btnVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,9 @@ public class DetalheActivity extends Activity {
         txtMod = findViewById(R.id.txtModelo);
 
         image = findViewById(R.id.image);
+
+        btnVoltar = findViewById(R.id.btnVoltar);
+        btnVoltar.setOnClickListener(this);
 
         int linha = getIntent().getIntExtra("linha", 0);
 
@@ -66,5 +73,11 @@ public class DetalheActivity extends Activity {
         txtMod.setText("MODELO: "+carro.getModelo());
         image.setImageResource(carro.getImage());
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
     }
 }
