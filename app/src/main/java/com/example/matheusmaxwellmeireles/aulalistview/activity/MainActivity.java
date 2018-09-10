@@ -1,12 +1,15 @@
-package com.example.matheusmaxwellmeireles.aulalistview;
+package com.example.matheusmaxwellmeireles.aulalistview.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.example.matheusmaxwellmeireles.aulalistview.adapter.MyAdapter;
+import com.example.matheusmaxwellmeireles.aulalistview.R;
+import com.example.matheusmaxwellmeireles.aulalistview.model.Carro;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +21,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     ArrayList<String> listCars;
     Intent intent;
     MyAdapter adapter;
-
+    List<Carro> cars;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +51,27 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         //Toast.makeText(getApplicationContext(), "Um item foi clicado.", Toast.LENGTH_LONG).show();
         intent = new Intent(getApplicationContext(), DetalheActivity.class);
+        int idImageCar = 0;
+        switch (i){
 
-        intent.putExtra("linha", i);
+            case 0:
+                idImageCar = R.drawable.uno;
+                break;
+            case 1:
+                idImageCar = R.drawable.gol;
+                break;
+            case 2:
+                idImageCar = R.drawable.palio;
+                break;
+            case 3:
+                idImageCar = R.drawable.celta;
+                break;
+            case 4:
+                idImageCar = R.drawable.tesla;
+                break;
+        }
+
+        intent.putExtra("idCar", idImageCar);
         startActivity(intent);
     }
 
@@ -94,4 +116,5 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
         return listCars;
     }
+
 }

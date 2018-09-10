@@ -1,17 +1,15 @@
-package com.example.matheusmaxwellmeireles.aulalistview;
+package com.example.matheusmaxwellmeireles.aulalistview.activity;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.matheusmaxwellmeireles.aulalistview.R;
+import com.example.matheusmaxwellmeireles.aulalistview.model.Carro;
 
 public class DetalheActivity extends Activity implements View.OnClickListener{
 
@@ -35,33 +33,33 @@ public class DetalheActivity extends Activity implements View.OnClickListener{
         btnVoltar.setOnClickListener(this);
 
 
-        int linha = getIntent().getIntExtra("linha", 0);
+        int idCar = getIntent().getIntExtra("idCar", 0);
 
         Carro carro = new Carro();
 
-        switch (linha){
+        switch (idCar){
 
-            case 0:
+            case R.drawable.uno:
                 carro.setFabricante("FIAT");
                 carro.setModelo("UNO");
                 carro.setImage(R.drawable.uno);
                 break;
-            case 1:
+            case R.drawable.gol:
                 carro.setFabricante("VOLKSWAGEN");
                 carro.setModelo("GOL");
                 carro.setImage(R.drawable.gol);
                 break;
-            case 2:
+            case R.drawable.palio:
                 carro.setFabricante("FIAT");
                 carro.setModelo("PALIO");
                 carro.setImage(R.drawable.palio);
                 break;
-            case 3:
+            case R.drawable.celta:
                 carro.setFabricante("CHEVROLET");
                 carro.setModelo("CELTA");
                 carro.setImage(R.drawable.celta);
                 break;
-            case 4:
+            case R.drawable.tesla:
                 carro.setFabricante("TESLA");
                 carro.setModelo("P100D");
                 carro.setImage(R.drawable.tesla);

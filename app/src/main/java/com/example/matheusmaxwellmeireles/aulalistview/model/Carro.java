@@ -1,4 +1,4 @@
-package com.example.matheusmaxwellmeireles.aulalistview;
+package com.example.matheusmaxwellmeireles.aulalistview.model;
 
 import android.graphics.drawable.Drawable;
 

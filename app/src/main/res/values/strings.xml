@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AulaListView</string>
     <string name="voltar">Voltar</string>
+    <string name="comprar">Comprar</string>
     <string-array name="arrayCarros">
         <item>UNO</item>
         <item>PALIO</item>

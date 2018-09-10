@@ -1,4 +1,4 @@
-package com.example.matheusmaxwellmeireles.aulalistview;
+package com.example.matheusmaxwellmeireles.aulalistview.adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.matheusmaxwellmeireles.aulalistview.R;
 
 import java.util.ArrayList;
 
@@ -55,11 +57,24 @@ public class MyAdapter extends BaseAdapter{
 
         //convertView = LayoutInflater.from(this.context).inflate(R.layout.layout_item_list, null);
 
-        ImageView imageView = convertView.findViewById(R.id.imageRow);
-        TextView textView = convertView.findViewById(R.id.textRow);
+        ImageView imageView = convertView.findViewById(R.id.imageLogo);
+        TextView textModel = convertView.findViewById(R.id.textModel);
+        TextView textFab = convertView.findViewById(R.id.textFab);
 
         imageView.setImageResource(listImages.get(position));
-        textView.setText(listCars.get(position));
+        textModel.setText(listCars.get(position));
+        if(listImages.get(position) == R.drawable.fiatlogo){
+            textFab.setText("Fiat");
+        }
+        else if(listImages.get(position) == R.drawable.chevroletlogo){
+            textFab.setText("Chevrolet");
+        }
+        else if(listImages.get(position) == R.drawable.volkslogo){
+            textFab.setText("Volkswagen");
+        }
+        else if(listImages.get(position) == R.drawable.teslalogo){
+            textFab.setText("Tesla");
+        }
 
         return convertView;
         // return view;
